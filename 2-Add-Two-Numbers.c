@@ -27,11 +27,11 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
         current->val = sum % 10;
         // Update he carry for the next iteration
         carry = sum / 10;
-
         // Move the l1 pointer to eventual next node.
         l1 = l1 ? l1->next : NULL;
         // Move the l2 pointer to eventual next node.
         l2 = l2 ? l2->next : NULL;
+        // Check if need another node.
         if (l1 || l2 || carry) {
             // Create the next node and have the current node point to it.
             current->next = calloc(1, sizeof(struct ListNode));
