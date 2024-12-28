@@ -20,17 +20,17 @@ double findMedianSortedArrays(int* nums1, int nums1Size, int* nums2, int nums2Si
         int minY = (partitionY == y) ? INT_MAX : nums2[partitionY];
 
         if (maxX <= minY && maxY <= minX) {
-            // We have partitioned arrays correctly
+            // We have partitioned correctly and can calculate median.
             if ((x + y) % 2 == 0) {
                 return ((double)(fmax(maxX, maxY) + fmin(minX, minY))) / 2.0;
             } else {
                 return (double)fmax(maxX, maxY);
             }
         } else if (maxX > minY) {
-            // Move towards the left in nums1
+            // Move towards the left in nums1.
             high = partitionX - 1;
         } else {
-            // Move towards the right in nums1
+            // Move towards the right in nums1.
             low = partitionX + 1;
         }
     }
